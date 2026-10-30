@@ -1,0 +1,22 @@
+冻结 M_joint 模型（标准化特征空间）
+生成时间: 07-Jul-2026 17:55:51
+开发队列 n=87 (阳性=24, 阴性=63), apparent AUC=0.804
+开发集固定 cutoff = 0.300996（Max Youden index）
+cutoff 对应开发集指标: Sensitivity=0.750, Specificity=0.746, Accuracy=0.747, Youden=0.496
+
+Term                Beta(std)           Mu           Sg
+------------------------------------------------------
+(Intercept)           -1.5651
+Age                   -0.4076      47.8161      13.3743
+Duration              -0.1099       5.8851       3.0440
+preCRS                 0.2507       7.4943       2.1343
+preDiag                0.4422       1.4598       0.5013
+Etio_stroke           -0.1084       0.4023       0.4932
+Etio_ischemia         -0.4801       0.1839       0.3897
+DomFreq                0.7368       7.3456       2.4743
+BroadAmp               0.2912       6.2661       3.8330
+DomStability           0.7813       2.7957       0.4961
+
+说明：预测时先用 (x-Mu)/Sg 标准化，再 logit = Intercept + sum(Beta.*x_std)。
+Etiology 哑变量参照组 = trauma；外部缺某病因类别时该列补 0。
+外部验证计算分类指标时使用 yhat = prob >= cutoff，不能用测试集重新计算 cutoff。

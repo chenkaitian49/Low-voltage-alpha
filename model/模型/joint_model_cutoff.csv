@@ -1,0 +1,2 @@
+Cutoff,Method,Sensitivity_dev,Specificity_dev,Accuracy_dev,Youden_dev,AUC_dev
+0.300996,"Max Youden index on development cohort",0.750000,0.746032,0.747126,0.496032,0.804233
